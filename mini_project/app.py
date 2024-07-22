@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, jsonify
 from googleapiclient.discovery import build
 from textblob import TextBlob
 
-API_KEY = 'AIzaSyAkSMo7zePYp7DlYqCWnr6YGgwI8hA6oXQ'
+API_KEY = 'YOUR_API_KEY'
 
 app = Flask(__name__)
 
