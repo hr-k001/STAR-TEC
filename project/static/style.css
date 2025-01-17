@@ -820,6 +820,10 @@ body.dark{
 #upbtn:hover {
   background-color: #fc036b; 
 }
+#submitBtn2 {
+  display: block;
+  margin: auto;
+}
 
 #quote {
   position: relative;
