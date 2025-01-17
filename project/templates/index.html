@@ -90,7 +90,7 @@
                         <textarea type="text" id="remarks" name="remarks" placeholder="Your Remarks....." style="height: 150px;"></textarea>
                     </div>
                 </div>
-                <input class="crow-s" type="submit" value="Submit">
+                <button class="cir_border" id="submitBtn2">Submit</button>
             </form>
             <div class="cbox">
                 <div>
@@ -202,6 +202,22 @@
             } else {
                 console.error('Invalid YouTube video ID');
             }
+        });
+
+        document.getElementById('submitBtn2').addEventListener('click', function(){
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('remarks').value;
+
+            fetch('/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message))
+            .catch(error => console.error('Error:', error));
         });
     </script>
     
